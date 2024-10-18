@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+header Area
+
+{% block content %}
+
+   <br/>
+   {% if zipcode%}
+         {{ zipcode }}
+
+   {%endif%}
+
+   {%if api%}
+         {%if api == "Error...."%}
+         {%else%}
+
+       <div class="jumbotron">
+  <h5 class="display-4"><a class="btn btn-success btn-lg" href="#" role="button">{{api.0.Category.Name}}</h5></a>
+  <p class="lead">{{api.0.ReportingArea}} | Air Quality: {{ api.0.AQI}}</p>
+  <hr class="my-4">
+  <h5 class="display-0">ST Code:{{api.0.StateCode}}</h5>
+
+
+  </div>
+
+{%endif%}
+{%endif%}
+
+{% endblock %}
+
+    Footer area
+
